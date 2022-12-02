@@ -1,0 +1,32 @@
+CREATE TABLE PUBG (id Integer Primary key, Full_name TEXT, Gamer_Tag TEXT, Kills Integer, Deaths Integer);
+
+INSERT INTO PUBG VALUES (1, 'Atty Moruti', "Gamerilla", 10, 3);
+INSERT INTO PUBG VALUES (2, "Danny Price", 'Warchief', 30, 17);
+INSERT INTO PUBG VALUES (3, "Henry Howards", "DrDismember", 45, 30);
+INSERT INTO PUBG VALUES (4, "Victor Forge", "VicVonStrangle", 90, 50);
+
+Select * from PUBG;
+
+ALTER TABLE PUBG ADD Gender TEXT;
+
+Update PUBG
+set gender = 'Male'
+Where id = 1;
+
+UPDATE PUBG
+SET gender = 'Male'
+WHERE id = 2;
+
+UPDATE PUBG
+SET gender = 'Male'
+WHERE id = 3;
+
+UPDATE PUBG
+SET gender = 'Male'
+WHERE id = 4;
+
+SELECT * FROM PUBG;
+
+DELETE FROM PUBG
+WHERE id = 4;
+SELECT * FROM PUBG;
