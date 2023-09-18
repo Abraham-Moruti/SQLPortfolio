@@ -1,5 +1,0 @@
-CREATE TABLE favorite_books (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER);
-INSERT INTO favorite_books VALUES (1, "Goosebumps", 9.5);
-INSERT INTO favorite_books VALUES (2, "A dance of blades", 8.5);
-INSERT INTO favorite_books VALUES (3, "Think like a Men", 7);
-INSERT INTO favorite_books VALUES (4, "Rich dad Poor dad", 9)
