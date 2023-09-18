@@ -40,18 +40,36 @@ INSERT INTO marvels VALUES(24, "Venon", 78, "Neutral", "Male", 1.90, 118, "EUA",
 INSERT INTO marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "EUA", 2, 7, 2, 7, 1, 4);
 INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
 
-SELECT * FROM marvels LIMIT 15;
+---Who's the tallest marvel Character?
 
 SELECT name, MAX (height_m) AS Tallest_Character From marvels;
 
+---Who's the shortest marvel character?
+
 SELECT name, MIN (height_m) AS Shortest_character FROM marvels;
+
+---What's the average height?
 
 SELECT AVG(height_m) Average_height_m FROM marvels;
 
+---How many male and female marvel characters are there?
+
 SELECT alignment,gender, COUNT(gender)as Heros_and_Villans FROM marvels Group by alignment, gender;
+
+--- Whisch Marvel characters hometown are in both USA and Canada?
 
 SELECT * FROM marvels WHERE hometown IN ( "USA", "Canada");
 
-SELECT * FROM marvels WHERE strength < 5 AND speed > 3;
+--- Who's the heaviest marvel  character?
 
 SELECT hometown, SUM (weight_kg) AS total_weight FROM marvels GROUP BY hometown HAVING total_weight > 250 ORDER BY total_weight DESC;
+
+--- Add a new column for Marvel characters with an strength greater than 6 (call them Strong), and less than 3 (call them Weak)
+
+SELECT *,
+CASE WHEN Strength > 6 THEN "Strong"
+WHEN Strength <3 THEN "Weak"
+ELSE "Average"
+END as "Strength_Status"
+FROM marvels
+GROUP BY Strength_Status;
