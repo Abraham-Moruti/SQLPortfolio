@@ -1,0 +1,32 @@
+CREATE TABLE actors (
+id INTEGER PRIMARY KEY,
+name TEXT,
+birth_place TEXT,
+movie TEXT);
+
+INSERT INTO actors (name, birth_place, movie) VALUES ("Chris Hemsworth", "Australia", "Avengers");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Tom Hiddleston", "London", "Avengers");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Robert Downey", "USA", "Avengers");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Johnney Depp", "USA", "The Tourist");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Angelina Jolie", "USA", "The Tourist");
+
+--- What movies are they in?
+
+SELECT * FROM actors;
+SELECT name From actors where movie="Avengers";
+
+
+CREATE table status (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+actor_id INTEGER,
+relationship TEXT);
+
+INSERT INTO status (actor_id, relationship) VALUES (1, "married");
+INSERT INTO status (actor_id, relationship) VALUES (2, "married");
+INSERT INTO status (actor_id, relationship) VALUES (3, "single");
+INSERT INTO status (actor_id, relationship) VALUES (4, "single");
+INSERT INTO status (actor_id, relationship) VALUES (5, "single");
+
+--- Are they married to each other?
+
+SELECT actors.name, status.relationship FROM actors JOIN status ON actors.id = status.actor_id;
