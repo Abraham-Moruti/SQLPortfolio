@@ -56,7 +56,7 @@ SELECT AVG(height_m) Average_height_m FROM marvels;
 
 SELECT alignment,gender, COUNT(gender)as Heros_and_Villans FROM marvels Group by alignment, gender;
 
---- Whisch Marvel characters hometown are in both USA and Canada?
+--- Which Marvel characters hometown are in the USA and Canada?
 
 SELECT * FROM marvels WHERE hometown IN ( "USA", "Canada");
 
