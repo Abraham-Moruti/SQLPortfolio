@@ -9,7 +9,11 @@ INSERT INTO actors (name, birth_place, movie) VALUES ("Tom Hiddleston", "London"
 INSERT INTO actors (name, birth_place, movie) VALUES ("Robert Downey", "USA", "Avengers");
 INSERT INTO actors (name, birth_place, movie) VALUES ("Johnney Depp", "USA", "The Tourist");
 INSERT INTO actors (name, birth_place, movie) VALUES ("Angelina Jolie", "USA", "The Tourist");
-
+INSERT INTO actors (name, birth_place, movie) VALUES ("Brad Pitt", "USA", "Bullet Train");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Leonardo DiCaprio", "USA", "Inception");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Tom Holland" "London", "Uncharted");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Scarlett Johansson", "USA", "Avengers");
+INSERT INTO actors (name, birth_place, movie) VALUES ("Chris Evans", "USA", "Avengers");
 --- What movies are they in?
 
 SELECT * FROM actors;
@@ -26,6 +30,11 @@ INSERT INTO status (actor_id, relationship) VALUES (2, "married");
 INSERT INTO status (actor_id, relationship) VALUES (3, "single");
 INSERT INTO status (actor_id, relationship) VALUES (4, "single");
 INSERT INTO status (actor_id, relationship) VALUES (5, "single");
+INSERT INTO status (actor_id, relationship) VALUES (6, "dating");
+INSERT INTO status (actor_id, relationship) VALUES (7, "single");
+INSERT INTO status (actor_id, relationship) VALUES (8, "dating");
+INSERT INTO status (actor_id, relationship) VALUES (9, "married");
+INSERT INTO status (actor_id, relationship) VALUES (10, "married");
 
 --- Are they married to each other?
 
