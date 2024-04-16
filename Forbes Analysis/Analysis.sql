@@ -32,3 +32,36 @@ limit 5;
 SELECT birthMonth, count(personName) FROM billionaires
 group by birthMonth
 order by birthMonth
+
+#9. List countries that start with the letters F or A
+select distinct (country) from billionaires
+where country like 'f%' or country like 'a%';
+
+#10. List Countries that start with 'C' but has an 'H/O' afterwards
+select distinct (country) from billionaires
+where country like 'CH%' or country like 'CO%';
+
+#11. Categorize the billionaires by high or low
+select personName, finalworth, if (finalworth <10000, 'low', 'high') AS Category
+from billionaires;
+
+#12. Categorize the billionaires by low, mwdium and high
+Select personName, finalWorth, case
+When finalWorth < 25000 then 'low'
+When finalworth between 25000 and 75000 then 'medium'
+else 'high'
+end as category
+from billionaires;
+
+#13. Compare the average net worth vs each person
+select personName, Finalworth,
+(Select round((avg(FinalWorth)),2)from billionaires) as AverageNetWorth
+from billionaires;
+
+#14. What are the top 3 languages spoken by billionaires
+select language , count(personName) AS languageCount from billionaires
+right JOIN geography
+ON billionaires.country= geography.Country_Name
+group by Language
+order by LanguageCount desc
+limit 3;
